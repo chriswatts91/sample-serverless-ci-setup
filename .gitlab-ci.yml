@@ -1,0 +1,47 @@
+image: node:4.3
+
+stages:
+  - build
+  - test
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  script:
+    - make install
+  artifacts:
+    paths:
+    - node_modules/
+
+unit:
+  stage: test
+  script:
+    - make app-test-unit
+
+lint:
+  stage: test
+  script:
+    - make app-test-lint
+
+staging:
+  stage: deploy
+  script:
+    - make deploy STAGE=staging
+  only:
+    - master
+    - tags
+  environment: staging
+
+production:
+  stage: deploy
+  script:
+    - make deploy STAGE=production
+  when: manual
+  only:
+    - master
+    - tags
+  environment: production
