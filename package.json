@@ -1,7 +1,28 @@
 {
-  "name": "Sample Lambda Serverless CI Setup",
+  "name": "sample-lambda-serverless-ci-setup",
   "version": "0.0.1",
   "description": "This is a AWS Lambda using the Serverless framework setup with GitLab CI",
   "author": "Chris A. Watts",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chriswatts91/sample-lambda-serverless-ci-setup.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha $(find ./src/app -name '*.spec.js') -- -R spec",
+    "lint": "standard; exit 0"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "request": "^2.75.0",
+    "request-promise": "^4.1.1"
+  },
+  "devDependencies": {
+    "chai-as-promised": "^6.0.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.14.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^2.4.5",
+    "standard": "7.1.0"
+  }
 }
