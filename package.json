@@ -1,0 +1,7 @@
+{
+  "name": "Sample Lambda Serverless CI Setup",
+  "version": "0.0.1",
+  "description": "This is a AWS Lambda using the Serverless framework setup with GitLab CI",
+  "author": "Chris A. Watts",
+  "license": "MIT"
+}
