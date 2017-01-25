@@ -9,7 +9,7 @@ class HelloWorld {
    */
   sayHello () {
     return new Promise(function (resolve, reject) {
-      resolve('Yo it works!')
+      resolve({message: 'Yo it works!'})
     })
   }
 }
